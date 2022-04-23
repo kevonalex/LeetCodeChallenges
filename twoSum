@@ -1,0 +1,12 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        numHashMap = {} #creates dict data type for hash map
+        for i, num in enumerate(nums):
+            if target-num in numHashMap:# searches hash map for target-num
+                return [numHashMap[target-num], i]# returns key of corresponding value alongside index numver,i,
+            else:
+                numHashMap[num] = i# assigns index to hash map
+               
+#COMMENTS - hash map is used along with enumerated list of numbers input to detect if difference between target and a selected number (referred to here as the difference 
+value) from the list is also found in the list. If the difference value is found in the list, the key (value stored in nums list) is called to return the value (the 
+index of the number in the original list input array) is returned, alongside the index (i) for the number used to calculate the difference value.
